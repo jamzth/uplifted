@@ -44,7 +44,7 @@
 <?php wp_footer(); ?>
 
 <script>
-jQuery(document).foundation();
+$(document).foundation();
 </script>
 
 </body>
