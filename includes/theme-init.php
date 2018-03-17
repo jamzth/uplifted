@@ -24,39 +24,6 @@ if ( ! isset( $content_width ) ){
 define('UPFW_NO_THEME_OPTIONS_PAGE',true);
 
 /**
- * Automatic updater initialization
- *
- * Initialize our auto-update script and define constants.
- */
-require_once trailingslashit( get_template_directory() ) . 'includes/UpThemes_Theme_Updater.php';
-
-// Define variables for our theme updates
-define('UPTHEMES_LICENSE_KEY','uplifted_theme');
-define('UPTHEMES_ITEM_NAME', 'Uplifted Theme');
-define('UPTHEMES_STORE_URL', 'https://upthemes.com');
-define('UPTHEMES_DOWNLOAD_ID', 3599);
-define('UPTHEMES_RENEWAL_URL', UPTHEMES_STORE_URL . '/checkout/?edd_action=add_to_cart&download_id=' . UPTHEMES_DOWNLOAD_ID);
-
-/**
- * Check for available theme updates
- *
- */
-function uplifted_theme_update_check(){
-
-	$upthemes_license = trim( get_option( UPTHEMES_LICENSE_KEY ) );
-
-	$edd_updater = new UpThemes_Theme_Updater(
-		array(
-			'remote_api_url'  => UPTHEMES_STORE_URL,  // Our store URL that is running EDD
-			'license'         => $upthemes_license, // The license key (used get_option above to retrieve from DB)
-			'item_name'       => UPTHEMES_ITEM_NAME,  // The name of this theme
-			'author'          => 'UpThemes'
-		)
-	);
-}
-add_action('admin_init','uplifted_theme_update_check',1);
-
-/**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
 function uplifted_page_menu_args( $args ) {
