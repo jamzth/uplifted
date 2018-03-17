@@ -60,7 +60,12 @@ function uplifted_enqueue_scripts(){
 	wp_enqueue_script( 'uplifted-oembed', get_template_directory_uri() . '/assets/js/jquery.oembed.js', array('jquery'), false, true );
 	wp_enqueue_script( 'uplifted-slidervids', get_template_directory_uri() . '/assets/js/jquery.sliderVids.js', array('jquery'), false, true );
 	wp_enqueue_script( 'uplifted-init', get_template_directory_uri() . '/assets/js/init.js', array('uplifted-flexslider','uplifted-slidervids'), false, true );
-	wp_enqueue_script( 'uplifted-foundation', get_template_directory_uri() . '/assets/js/foundation.js', array('jquery'), '5.0.0', true );
+  // Deregister the jquery version bundled with WordPress.
+  //wp_deregister_script( 'jquery' );
+
+  // CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
+  //wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1', false );
+  wp_enqueue_script( 'uplifted-foundation', get_template_directory_uri() . '/assets/js/foundation.js', array('jquery'), '5.0.0', true );
 	wp_enqueue_script( 'uplifted-foundation-topbar', get_template_directory_uri() . '/assets/js/foundation.topbar.js', array('uplifted-foundation'), '5.0.0', true );
 
 	wp_enqueue_style( 'uplifted-fonts', uplifted_fonts_url() );
