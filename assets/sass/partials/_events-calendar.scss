@@ -1,0 +1,97 @@
+.tribe-theme-uplifted{
+	.ctfw-breadcrumbs{
+		max-width: 1000px;
+	}
+
+	&.events-archive #tribe-events-pg-template{
+		margin-top: 60px;
+	}
+
+	.tribe-events-list h2.tribe-events-page-title{
+		margin-top: .75em;
+		margin-bottom: 0;
+		font-weight: 400;
+	}
+
+	.tribe-events-list h2.tribe-events-list-event-title{
+		font-weight: 100;
+	}
+
+	&.single-tribe_events .tribe-events-event-image{
+		margin-left: -25px;
+		margin-right: -25px;
+	}
+
+	.tribe-events-list-separator-month{
+		font-size: 1.2em;
+		text-transform: uppercase;
+		font-weight: 100;
+		font-family: $header-font-family;
+		letter-spacing: 2px;
+	}
+
+	#tribe-bar-form .tribe-bar-submit input[type=submit]{
+		@include button-style($primary-color);
+		border-radius: $global-radius;
+	}
+
+	#tribe-events-content.tribe-events-list,
+	&.single-tribe_events #tribe-events{
+		margin-bottom: $panel-margin-bottom;
+		background-color: $panel-bg;
+		border: $panel-border;
+		padding: $panel-padding;
+ 	}
+
+	.tribe-events-calendar thead th{
+		background-color: contrast-color($body-bg, darken($body-bg, 5%), lighten($body-bg, 10%), 50%); // set section bg color based off of site background color, either lighten or darken
+		color: contrast-color($body-bg, $body-font-color, lighten($body-bg,70%), 50%);
+		border-top: 1px solid contrast-color($body-bg, darken($body-bg, 5%), lighten($body-bg, 10%), 50%);
+		border-left-color: contrast-color($body-bg, darken($body-bg, 5%), lighten($body-bg, 10%), 50%);
+		border-right-color: contrast-color($body-bg, darken($body-bg, 5%), lighten($body-bg, 10%), 50%);
+	}
+
+	#tribe-bar-form{
+		background-color: $transparent-neutral-color;
+	}
+
+	.tribe-events-calendar td.tribe-events-past div[id*="tribe-events-daynum-"],
+	.tribe-events-calendar td.tribe-events-past div[id*="tribe-events-daynum-"]>a{
+		color: contrast-color($panel-border-color,rgba(0,0,0,0.4),rgba(255,255,255,0.4),50%);
+		//background-color: contrast-color($panel-border-color, lighten($panel-border-color,20%), darken($panel-border-color,20%),50%);
+		background-color: contrast-color($body-bg, darken($body-bg, 5%), lighten($body-bg, 10%), 50%);
+	}
+
+	#tribe-events-content .tribe-events-calendar td {
+		border-color: contrast-color($body-bg, darken($body-bg, 5%), lighten($body-bg, 10%), 50%);
+	}
+
+	.tribe-events-calendar div[id*="tribe-events-daynum-"], .tribe-events-calendar div[id*="tribe-events-daynum-"] a{
+		color: contrast-color($panel-border-color,rgba(0,0,0,0.6),rgba(255,255,255,0.6),50%);
+		//background-color: contrast-color($panel-border-color, lighten($panel-border-color,10%), darken($panel-border-color,10%),50%);
+		background-color: contrast-color($body-bg, darken($body-bg, 2%), lighten($body-bg, 10%), 50%);
+	}
+
+	#tribe-events-content .tribe-events-calendar td{
+		background-color: white;
+	}
+
+	.tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"],
+	.tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"]>a,
+	#tribe_events_filters_wrapper input[type=submit],
+	.tribe-events-button,
+	.entry-content .tribe-events-button,
+	.tribe-events-button.tribe-inactive,
+	.entry-content .tribe-events-button:hover,
+	.tribe-events-button:hover,
+	.tribe-events-button.tribe-active:hover{
+		background-color: $secondary-color;
+	}
+
+	#tribe-events-content .tribe-events-tooltip h4,
+	#tribe_events_filters_wrapper .tribe_events_slider_val,
+	.single-tribe_events a.tribe-events-ical,
+	.single-tribe_events a.tribe-events-gcal{
+		color: $secondary-color;
+	}
+}

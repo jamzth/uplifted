@@ -1,0 +1,116 @@
+/* Layout */
+
+//
+// Target Content Layout for Mobile Devices
+//
+
+#masthead {
+	@include clearfix;
+}
+
+#container {
+  @include grid-row;
+  @include clearfix;
+}
+
+@media screen and (max-width: $small-screen) {
+
+	// this is the Main Content section
+	#uplifted-content {
+	  @include grid-column(12);
+	}
+
+	// this is the Sidebar section
+	#uplifted-sidebar-right {
+	  @include grid-column(12);
+	}
+
+}
+
+//
+// Target Content Layout for above Mobile
+//
+@media screen and (min-width: $small-screen) {
+
+	// this is the Main Content section
+	.uplifted-has-sidebar #uplifted-content {
+		@include grid-column(8,false,false,0);
+	}
+
+	.uplifted-no-sidebar #uplifted-content {
+		@include grid-column(8,true,true,2);
+	}
+
+	// this is the Sidebar section
+	#uplifted-sidebar-right {
+		@include grid-column(4,true,false);
+	}
+
+	// if the layout is reversed
+	.layout_reversed.uplifted-has-sidebar {
+
+		#uplifted-content {
+			@include grid-column(8,true,false,0);
+			float: right; // should be able to added via above include, but not sure how
+			              // so could be changed later
+		}
+
+		#uplifted-sidebar-right {
+			@include grid-column(4);
+		}
+	}
+}
+
+.page-template-page-templatesstack-php{
+	.ctfw-breadcrumbs{
+		display: none;
+	}
+
+	#container,
+	#uplifted-content{
+		width: 100% !important;
+		max-width: 100% !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		float: none !important;
+	}
+
+	#footer{
+		margin-top: 0;
+	}
+
+	.mp-stack{
+		p{
+			margin-bottom: 0;
+		}
+	}
+
+	.mp-brick .mp-brick-outer{
+		@include grid-row;
+	}
+
+	.mp-brick .mp-brick-edit-link,
+	.mp-brick .mp-brick-add-before-link,
+	.mp-brick .mp-brick-add-after-link,
+	.mp-brick .mp-brick-reorder-bricks{
+		margin: 5px;
+		background: white !important;
+		border-width: 0 !important;
+		color: #444 !important;
+		border-radius: 4px;
+		text-transform: uppercase;
+		font-size: .9em;
+		font-weight: bold;
+		padding: 5px 10px;
+	}
+
+	.mp-brick .mp-brick-add-before-link:hover,
+	.mp-brick .mp-brick-add-after-link:hover{
+		width: auto;
+	}
+
+	.mp-brick-inner{
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+}

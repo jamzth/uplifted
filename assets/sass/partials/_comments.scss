@@ -1,0 +1,161 @@
+/* Comments */
+
+#comments {
+
+	ol, ul {
+		list-style: none;
+	}
+}
+
+// Comments container
+.uplifted-comments {
+	margin: 0 0 3em;
+
+	// add some margin to nested comments
+	.children {
+		margin: $panel-padding (-$panel-padding) 0 0;
+
+		// remove right border of nested comments
+		.comment {
+			border-right: none;
+
+			&.bypostauthor {
+			}
+		}
+	}
+}
+
+// theaded comments
+.comment {
+	background-color: $panel-bg;
+	border: $panel-border;
+	padding: $panel-padding;
+	margin-bottom: $panel-margin-bottom;
+	position: relative;
+	color: contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 70%), 50%);
+	@include clearfix;
+
+	> article {
+		@include clearfix;
+	}
+
+	// contains user image and edit button
+	.comment-meta {
+		@media screen and (min-width: $small-screen) {
+			width: 12%;
+			float: left;
+		}
+
+		.avatar {
+			margin-bottom: 1em;
+			border-radius: 6px;
+		}
+	}
+
+	.comment-content {
+		@media screen and (min-width: $small-screen) {
+			width: 85%;
+			float: right;
+		}
+	}
+
+	.author-name {
+		font-size: 1.1em;
+		font-weight: bold;
+		margin-bottom: .5em;
+
+		// hide the "says:" text added to comments
+		.says {
+			display: none;
+		}
+	}
+
+	// reply to comment button
+	.reply {
+		position: absolute;
+		top: $panel-padding;
+		right: $panel-padding;
+	}
+
+	// add some space to comment form when replying to previous comments
+	#respond {
+		margin-top: $panel-margin-bottom;
+	}
+}
+
+/*
+ * Comment Form
+ */
+
+// Cancel Reply Link
+#cancel-comment-reply-link {
+	margin-left: .5em
+}
+
+// Message above form
+#respond .comment-notes,
+#respond .logged-in-as {
+	margin: 25px 0 35px 0;
+}
+
+	#respond .required {
+		color: $secondary-color;
+	}
+
+// Error Messages
+#respond label.error {
+	font-weight: normal;
+}
+
+	// Error Message for Name, Email, URL after input
+	.comment-form-author label.error,
+	.comment-form-email label.error,
+	.comment-form-url label.error {
+		position: absolute;
+		left: 370px;
+		white-space: nowrap;
+		font-size: 13px;
+	}
+
+	// Error Message for Comment
+	p.comment-form-comment label.error {
+		position: relative;
+		top: -5px;
+		display: block;
+		font-size: 13px;
+	}
+
+// Allowed tags note
+.form-allowed-tags {
+	font-size: .7em;
+	padding: .8em;
+	background-color: $panel-border-color;
+	border-radius: 4px;
+}
+
+// Submit Button
+#respond .form-submit {
+	margin: 20px 0 0 0;
+
+	button,
+	input[type="submit"]{
+		border: none;
+		border-radius: 4px;
+		@include button-base;
+		@include button-size();
+		@include button-style($primary-color);
+		box-shadow: none;
+		transition: 200ms background-color linear;
+		font-weight: bold;
+
+		&:hover{
+			background-color: $secondary-color;
+		}
+	}
+}
+
+// Comments closed message (in place of add form if comments have already been made)
+#uplifted-comments-closed {
+	margin-top: 40px;
+	font-style: italic;
+}

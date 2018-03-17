@@ -1,0 +1,162 @@
+/* Galleries */
+
+/*
+  *
+  * Gallery Archive Page
+  *
+  */
+
+// we want the Gallery page width to be 100% all the time. the page does
+// not support a sidebar, but lets write styles just to make sure
+.page-template-page-templatesgalleries-php.uplifted-no-sidebar #uplifted-content,
+.page-template-page-templatesgalleries-php.uplifted-has-sidebar #uplifted-content {
+	width: 100%;
+}
+
+// for Single Gallery pages we need to style the container holding our images
+.page-template-page-templatesgallery-php .uplifted-entry-content .gallery {
+	background-color: $panel-bg;
+	padding: $panel-padding;
+	border: $panel-border;
+}
+
+// mobile gallery item styles
+.gallery-item {
+	margin-bottom: $panel-margin-bottom;
+}
+.gallery-item a,
+.gallery-item img {
+	display: block;
+	margin: 0 auto;
+}
+
+.gallery-caption {
+	padding: 0 0 1.5em;
+	font-size: .9em;
+	line-height: 1.5;
+	text-align: left;
+	font-style: italic;
+}
+
+.uplifted-caption-image-caption {
+	background-color: $panel-bg;
+	padding: $panel-padding;
+	border: $panel-border;
+
+	.uplifted-caption-image-title {
+		font-family: $header-font-family;
+		font-size: 1.5em;
+	}
+
+	.uplifted-caption-image-description {
+		color: lighten($body-font-color,50%);
+		font-size: .8em;
+	}
+}
+
+@media screen and (min-width: $small-screen - 140px) {
+	.gallery {
+		margin-bottom: $panel-margin-bottom;
+	}
+	.gallery-item {
+		float: left;
+		margin: 0 4px 4px 0;
+		overflow: hidden;
+		position: relative;
+		a,
+		img {
+			margin-bottom: 0;
+		}
+	}
+	.gallery-icon {
+		margin: 0;
+	}
+	.gallery-columns-1 .gallery-item {
+		max-width: 100%;
+	}
+	.gallery-columns-2 .gallery-item {
+		max-width: 48%;
+		max-width: -webkit-calc(unquote("50% - 4px"));
+		max-width: calc(unquote("50% - 4px"));
+	}
+	.gallery-columns-3 .gallery-item {
+		max-width: 32%;
+		max-width: -webkit-calc(unquote("33.3% - 4px"));
+		max-width: calc(unquote("33.3% - 4px"));
+	}
+	.gallery-columns-4 .gallery-item {
+		max-width: 23%;
+		max-width: -webkit-calc(unquote("25% - 4px"));
+		max-width: calc(unquote("25% - 4px"));
+	}
+	.gallery-columns-5 .gallery-item {
+		max-width: 19%;
+		max-width: -webkit-calc(unquote("20% - 4px"));
+		max-width: calc(unquote("20% - 4px"));
+	}
+	.gallery-columns-6 .gallery-item {
+		max-width: 15%;
+		max-width: -webkit-calc(unquote("16.7% - 4px"));
+		max-width: calc(unquote("16.7% - 4px"));
+	}
+	.gallery-columns-7 .gallery-item {
+		max-width: 13%;
+		max-width: -webkit-calc(unquote("14.28% - 4px"));
+		max-width: calc(unquote("14.28% - 4px"));
+	}
+	.gallery-columns-8 .gallery-item {
+		max-width: 11%;
+		max-width: -webkit-calc(unquote("12.5% - 4px"));
+		max-width: calc(unquote("12.5% - 4px"));
+	}
+	.gallery-columns-9 .gallery-item {
+		max-width: 9%;
+		max-width: -webkit-calc(unquote("11.1% - 4px"));
+		max-width: calc(unquote("11.1% - 4px"));
+	}
+	.gallery-columns-1 .gallery-item:nth-of-type(1n),
+	.gallery-columns-2 .gallery-item:nth-of-type(2n),
+	.gallery-columns-3 .gallery-item:nth-of-type(3n),
+	.gallery-columns-4 .gallery-item:nth-of-type(4n),
+	.gallery-columns-5 .gallery-item:nth-of-type(5n),
+	.gallery-columns-6 .gallery-item:nth-of-type(6n),
+	.gallery-columns-7 .gallery-item:nth-of-type(7n),
+	.gallery-columns-8 .gallery-item:nth-of-type(8n),
+	.gallery-columns-9 .gallery-item:nth-of-type(9n) {
+		margin-right: 0;
+	}
+	.gallery-caption {
+		background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); // W3C
+		color: #fff;
+		margin: 0;
+		font-size: .6em;
+		max-height: 53%;
+		font-style: normal;
+		opacity: 0;
+		padding: 2em 1em;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+
+		transition: opacity .25s ease-in-out;
+
+		&:before {
+			content: "";
+			height: 100%;
+			min-height: 49px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+		.gallery-item:hover & {
+			opacity: 1;
+		}
+		.gallery-columns-7 &,
+		.gallery-columns-8 &,
+		.gallery-columns-9 & {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,78 @@
+/* People */
+
+
+//
+// Individual Person Block widget
+// on multi and single person page
+//
+.person-profile-card {
+  overflow: hidden;
+  
+  .uplifted-entry-header {
+    padding: $panel-padding;
+  }
+  
+  // person name
+  .uplifted-entry-title {
+    
+    a:hover {
+      color: $primary-color;
+    }
+  }
+  
+  .uplifted-entry-meta {
+    padding: 0;
+    
+    .entry-meta-item {
+      float: none;
+      
+      &.uplifted-person-position {
+        font-size: 1.3em;
+        
+        @media screen and (min-width: ($small-screen - 200px) ) {
+      	  margin-bottom: .5em;
+      	  padding-bottom: .5em;
+      	  border-bottom: 1px solid $panel-border-color;
+      	}
+      }
+    }
+  }
+}
+
+/*
+ *
+ * People Archive Page
+ *
+ */
+
+// we are going to make the page full width all the time
+// with the people blocks set in a two column grid
+.page-template-page-templatespeople-php {
+
+  #uplifted-content {
+    width: 100%;
+  }
+
+  #uplifted-sidebar-right {
+    display: none;
+  }
+
+  // set people blocks in two column grid for desktop
+  @media screen and (min-width: $medium-screen) {
+   
+    #uplifted-loop-after-content > article {
+      width: 48%;
+      float: left;
+      margin: 0 1%;
+
+      &:nth-child(odd) {
+        margin-left: 0;
+        clear: both;
+      }
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,14 @@
+//
+// Wordpress Editor Styles
+//
+
+@import "modules/variables";
+@import "partials/global";
+@import "partials/normalize";
+@import "partials/type";
+@import "partials/wordpress";
+
+.mceContentBody{
+	padding: 20px !important;
+	background-color: white !important;
+}

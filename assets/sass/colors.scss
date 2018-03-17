@@ -1,0 +1,1370 @@
+@import 'modules/color';
+@import 'modules/variables';
+@import 'partials/global';
+@import 'partials/buttons';
+
+a{
+	color: $primary-color;
+
+	&:hover{
+		color: contrast-color($primary-color,lighten($primary-color,10%),darken($primary-color,10%));
+	}
+}
+
+.ctfw-breadcrumbs {
+	color: contrast-color($body-bg, lighten($body-font-color,50%), lighten($body-bg, 50%));
+
+	a {
+		//color: lighten($body-font-color,50%);
+		color: contrast-color($body-bg, lighten($body-font-color,50%), lighten($body-bg, 50%));
+
+		&:hover {
+			color: $primary-color;
+		}
+	}
+}
+
+/* Giving Widget */
+.uplifted-giving-widget-button {
+
+	a,
+	#footer & a{
+		background-color: $secondary-color;
+		color: contrast-color($secondary-color,lighten($secondary-color,50%),darken($secondary-color,50%));
+
+		&:hover {
+			background-color: contrast-color($secondary-color,lighten($secondary-color,10%),darken($secondary-color,10%));
+		}
+	}
+}
+
+// theaded comments
+.comment {
+	background-color: $panel-bg;
+	border: $panel-border;
+	padding: $panel-padding;
+	margin-bottom: $panel-margin-bottom;
+	color: contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 70%), 50%);
+}
+
+#respond .required {
+	color: $secondary-color;
+}
+
+// Allowed tags note
+.form-allowed-tags {
+	background-color: $panel-border-color;
+}
+
+// Submit Button
+#respond .form-submit {
+	button,
+	input[type="submit"]{
+		@include button-style($primary-color);
+
+		&:hover{
+			background-color: $secondary-color;
+		}
+	}
+}
+
+$input-bg-color: contrast-color($body-bg,darken($body-bg,20%),lighten($body-bg,20%));
+$input-text-color: contrast-color($input-bg-color,lighten($body-bg,70%),darken($body-bg,70%));
+
+/* We use this to get basic styling on all basic form elements */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"]{
+	background-color: $input-bg-color;
+	color: #222;
+}
+
+$info-bar-bg-color: $primary-color;
+$info-bar-text-color: contrast-color($info-bar-bg-color,#fff,#000,30%);
+
+$info-bar-search-input-bg-color: $info-bar-bg-color;
+$info-bar-search-input-text-color: contrast-color($info-bar-search-input-bg-color,#fff,#000,30%);
+
+$info-bar-search-button-bg-color: darken($primary-color,10%);
+$info-bar-search-button-text-color: contrast-color($info-bar-search-button-bg-color,#fff,#000,30%);
+
+.ctc-header{
+	background-color: $info-bar-bg-color;
+	color: $info-bar-text-color;
+
+	li{
+
+		> a:hover{
+			background-color: darken($info-bar-bg-color,5%);
+		}
+
+	}
+
+	a{
+		color: $info-bar-text-color;
+
+		&:hover{
+			color: $info-bar-text-color;
+		}
+	}
+	.ctc-message{
+		a{
+			border-bottom-color: rgba($info-bar-text-color,.4);
+
+			&:hover{
+				border-color: $info-bar-text-color;
+			}
+		}
+	}
+
+	input[type="search"]{
+		border-color: $info-bar-search-button-bg-color;
+		color: $info-bar-search-input-text-color;
+		background-color: $info-bar-search-input-bg-color;
+		color: $info-bar-search-input-text-color;
+
+		&::-webkit-input-placeholder{
+			color: $info-bar-search-input-text-color;
+		}
+		&:-moz-input-placeholder{
+			color: $info-bar-search-input-text-color;
+		}
+		&::-webkit-input-placeholder{
+			color: $info-bar-search-input-text-color;
+		}
+		&:-ms-input-placeholder{
+			color: $info-bar-search-input-text-color;
+		}
+	}
+
+	button{
+		background-color: $info-bar-search-button-bg-color;
+		color: $info-bar-search-button-text-color;
+	}
+}
+
+.tribe-theme-uplifted{
+
+	#tribe-bar-form .tribe-bar-submit input[type=submit]{
+		@include button-style($primary-color);
+	}
+
+	#tribe-events-content.tribe-events-list,
+	&.single-tribe_events #tribe-events{
+		background-color: $panel-bg;
+		border-color: $panel-border;
+ 	}
+
+	.tribe-events-calendar thead th{
+		background-color: contrast-color($body-bg, darken($body-bg, 5%), lighten($body-bg, 10%), 50%); // set section bg color based off of site background color, either lighten or darken
+		color: contrast-color($body-bg, $body-font-color, lighten($body-bg,70%), 50%);
+		border-top-color: contrast-color($body-bg, darken($body-bg, 5%), lighten($body-bg, 10%), 50%);
+		border-left-color: contrast-color($body-bg, darken($body-bg, 5%), lighten($body-bg, 10%), 50%);
+		border-right-color: contrast-color($body-bg, darken($body-bg, 5%), lighten($body-bg, 10%), 50%);
+	}
+
+	#tribe-bar-form{
+		background-color: $transparent-neutral-color;
+	}
+
+	.tribe-events-calendar td.tribe-events-past div[id*="tribe-events-daynum-"],
+	.tribe-events-calendar td.tribe-events-past div[id*="tribe-events-daynum-"]>a{
+		color: contrast-color($panel-border-color,rgba(0,0,0,0.4),rgba(255,255,255,0.4),50%);
+		//background-color: contrast-color($panel-border-color, lighten($panel-border-color,20%), darken($panel-border-color,20%),50%);
+		background-color: contrast-color($body-bg, darken($body-bg, 5%), lighten($body-bg, 10%), 50%);
+	}
+
+	#tribe-events-content .tribe-events-calendar td {
+		border-color: contrast-color($body-bg, darken($body-bg, 5%), lighten($body-bg, 10%), 50%);
+	}
+
+	.tribe-events-calendar div[id*="tribe-events-daynum-"], .tribe-events-calendar div[id*="tribe-events-daynum-"] a{
+		color: contrast-color($panel-border-color,rgba(0,0,0,0.6),rgba(255,255,255,0.6),50%);
+		//background-color: contrast-color($panel-border-color, lighten($panel-border-color,10%), darken($panel-border-color,10%),50%);
+		background-color: contrast-color($body-bg, darken($body-bg, 2%), lighten($body-bg, 10%), 50%);
+	}
+
+	#tribe-events-content .tribe-events-calendar td{
+		background-color: white;
+	}
+
+	.tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"],
+	.tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"]>a,
+	#tribe_events_filters_wrapper input[type=submit],
+	.tribe-events-button,
+	.entry-content .tribe-events-button,
+	.tribe-events-button.tribe-inactive,
+	.entry-content .tribe-events-button:hover,
+	.tribe-events-button:hover,
+	.tribe-events-button.tribe-active:hover{
+		background-color: $secondary-color;
+	}
+
+	#tribe-events-content .tribe-events-tooltip h4,
+	#tribe_events_filters_wrapper .tribe_events_slider_val,
+	.single-tribe_events a.tribe-events-ical,
+	.single-tribe_events a.tribe-events-gcal{
+		color: $secondary-color;
+	}
+}
+
+// FlexSlider Default Theme
+.flexslider {
+
+	li {
+
+		.flex-caption {
+
+			background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.1) 65%, rgba(0,0,0,.6));
+			color: white;
+
+			h2 {
+				color: $neutral-color;
+
+				a {
+					color: white;
+
+					&:hover {
+						color: $primary-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Direction Nav
+.flex-direction-nav {
+
+	a	{
+		color: #fff;
+	}
+}
+
+// Control Nav
+.flex-control-nav {
+
+	li {
+
+		a {
+			background: #666;
+			background: rgba(255,255,255,0.5);
+
+			&:hover {
+				background: #fff;
+				background: rgba(255,255,255,0.8);
+			}
+
+			&.flex-active {
+				background: #fff;
+			}
+		}
+	}
+}
+
+.slide-text {
+
+	.slide-title a {
+		background-color: $primary-color;
+		color: contrast-color($primary-color, #fff, blue, 50%);
+	}
+
+	p {
+		background-color: rgba(50, 50, 48, .8);
+		color: contrast-color($secondary-color, #fff, #f2f2f2, 50%);
+	}
+
+}
+
+// Video Slides
+.uplifted-slide-video {
+	background-color: #000;
+
+	&.visible {
+		.flex-image-container {
+			background-color: #000;
+		}
+	}
+}
+
+/* Footer */
+$footer-bg: contrast-color($body-bg, darken($body-bg, 5%), lighten($body-bg, 10%), 50%);
+$footer-text: contrast-color($footer-bg, mix(#000,$body-bg,55%), mix(#fff,$body-bg,55%), 50%);
+$footer-meta-bg: contrast-color($body-bg, darken($body-bg, 10%), lighten($body-bg, 30%), 50%);
+$footer-meta-text: contrast-color($footer-meta-bg, mix(#000,$body-bg,55%), mix(#fff,$body-bg,55%), 50%);
+
+#footer {
+	padding: ($panel-padding * 1.5) 0 ($panel-padding * 1.2);
+	background-color: $footer-bg;
+	color: $footer-text;
+
+	a {
+		color: contrast-color($body-bg, lighten($body-font-color, 20%), lighten($body-bg, 50%), 50%);
+	}
+
+}
+
+#footer-meta{
+	background-color: $footer-meta-bg;
+
+	&,
+	#menu-social ul li a:before{
+		color: $footer-meta-text;
+	}
+}
+
+// some page titles have a sub-header
+.uplifted-main-title > span {
+	color: lighten($topbar-link-color, 50%);
+}
+
+// set the page body text to be based off of site background color, light or dark
+.uplifted-content-block {
+	color: contrast-color($body-bg, $body-font-color, lighten($body-bg, 70%), 50%); // covers p elements and text not wrapped in elements
+
+	h1, h2, h3, h4, h5, h6 {
+		color: contrast-color($body-bg, $body-font-color, lighten($body-bg, 70%), 50%);
+	}
+}
+
+//
+// Search Page
+//
+.search-results {
+	h1 {
+		#search-terms {
+			color: $primary-color;
+		}
+	}
+}
+
+//
+// Single Attachments Page
+//
+
+.single-attachment {
+
+	#uplifted-content .hentry {
+		background-color: white;
+	}
+
+	.entry-attachment {
+
+		.previous-image,
+		.next-image {
+			a {
+				background-color: $primary-color;
+				color: #fff;
+
+
+				&:hover {
+					background-color: $anchor-font-color-hover;
+				}
+			}
+		}
+	}
+
+	.entry-meta {
+		color: lighten($topbar-link-color, 50%);
+
+		a {
+			color: $body-font-color;
+			&:hover {
+				color: $primary-color;
+			}
+		}
+	}
+}
+
+//
+// Homepage
+//
+
+.page-template-page-templateshomepage-php {
+
+	// for slides with a video embed
+	.uplifted-slide-video{
+		.flex-play-overlay{
+			border-color: white;
+
+			background-color: rgba(0,0,0,.4);
+
+			&:before{
+				color: white;
+			}
+
+		}
+
+		a:hover {
+
+			.flex-play-overlay{
+				background-color: $primary-color;
+			}
+		}
+	}
+
+	.uplifted-intro-wrapper {
+		background-color: contrast-color($body-bg, darken($body-bg, 5%), lighten($body-bg, 10%), 50%); // set section bg color based off of site background color, either lighten or darken
+		padding: $panel-padding 0;
+		border: $panel-border-size $panel-border-style contrast-color($body-bg, darken($body-bg, 10%), lighten($body-bg, 15%), 50%);
+		color: contrast-color($body-bg, $body-font-color, lighten($body-bg,70%), 50%);
+
+	}
+
+	// welcome text
+	#uplifted-intro-inner {
+
+		#uplifted-intro-heading {
+			color: contrast-color($body-bg, $body-font-color, lighten($body-bg,70%), 50%);
+			border-bottom: 3px solid contrast-color($body-bg, darken($body-bg, 10%), lighten($body-bg,25%), 50%);
+		}
+	}
+
+	.uplifted-caption-image-caption {
+		color: $body-font-color;
+	}
+
+	.slides .uplifted-caption-image-caption {
+		background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.1) 65%, rgba(0,0,0,.6));
+	}
+
+	@media screen and (min-width: 641px){
+
+		.uplifted-caption-image-caption {
+			color: white;
+			background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.1) 35%, rgba(0,0,0,.1));
+
+			.uplifted-caption-image-title {
+				color: white;
+			}
+			.uplifted-caption-image-description {
+				color: $neutral-color;
+			}
+		}
+	}
+}
+
+/*
+ *
+ * Pagination
+ *
+ */
+
+//
+// Archive Page Pagination
+//
+.pagination {
+	background-color: $panel-bg;
+	border: $panel-border;
+
+	ul {
+
+		li {
+
+			a {
+				color: contrast-color($panel-bg, lighten($body-font-color, 30%), #f2f2f2, 50%);
+
+				&:hover {
+					background-color: $primary-color;
+					color: $neutral-color;
+				}
+			}
+			span.current {
+				color: $secondary-color;
+			}
+		}
+	}
+}
+
+//
+// Single Page Pagination
+//
+.uplifted-nav-left-right {
+
+	>div {
+		background-color: $panel-bg;
+		border: $panel-border;
+	}
+
+	a {
+		color: contrast-color($panel-bg, lighten($body-font-color, 30%), #f2f2f2, 50%);
+
+		&:hover {
+			background-color: $primary-color;
+			color: $neutral-color;
+		}
+	}
+}
+
+//
+// Attachment Page Pagination
+//
+.attachment-pagination {
+
+	a {
+		color: contrast-color($neutral-color, lighten($topbar-link-color, 50%), #f2f2f2, 50%);
+
+		&:hover {
+			background-color: $primary-color;
+			color: $neutral-color;
+		}
+	}
+}
+
+/* People */
+
+
+//
+// Individual Person Block widget
+// on multi and single person page
+//
+.person-profile-card {
+
+	// person name
+	.uplifted-entry-title {
+
+		a:hover {
+			color: $primary-color;
+		}
+	}
+
+	.uplifted-entry-meta {
+
+		.entry-meta-item {
+
+			&.uplifted-person-position {
+
+				@media screen and (min-width: ($small-screen - 200px) ) {
+					border-bottom-color: $panel-border-color;
+				}
+			}
+		}
+	}
+}
+
+/* Post */
+
+// a post is a general module that controls the design
+// and styling of many things, including blog post, people,
+// locations, events, and sermons, and more
+
+// Article - .<post-type>
+// div - .uplifted-entry-image
+// div - .uplifted-content-meta
+//	 header - .uplifted-entry-header
+//	 div - .uplifted-entry-content
+//	 footer - .uplifted-entry-footer
+
+
+//
+// Global .hentry styles - this is for all post
+// and article types, some styles will be overwritten
+// below in speacial cases
+//
+.uplifted-content-meta {
+	background-color: $panel-bg;
+	color: contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 70%), 50%);
+
+
+	// set the color of body copy and heading when in the main content area
+	.uplifted-content-block & h1, h2, h3, h4, h5, h6 {
+		color: contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 70%), 50%);
+	}
+}
+
+
+// Meta Entry Widget
+//
+// global styles for each post type including
+// meta for people, sermons, etc
+//
+
+// Post Content container
+.uplifted-content-meta {
+	padding: $panel-padding;
+}
+
+.uplifted-entry-meta {
+
+	li {
+		color: contrast-color($body-bg, lighten($body-font-color,30%), lighten($body-bg, 50%));
+	}
+
+	a {
+		color: contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 70%), 50%);
+		color: contrast-color($body-bg, lighten($body-font-color,30%), lighten($body-bg, 50%));
+
+		&:hover {
+			color: $primary-color;
+		}
+	}
+
+	// tweak icons in meta list
+	.genericon {
+		color: contrast-color($body-bg, lighten($body-font-color,30%), lighten($body-bg, 50%));
+	}
+}
+
+/* Sermons */
+
+.single-ctc_sermon	{
+
+	.uplifted-entry-header {
+
+		// sermon title, date, and speaker
+		.uplifted-entry-title-meta {
+
+			ul {
+
+				li {
+
+					a {
+						color: contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 70%), 50%);
+
+						&:hover {
+							color: $secondary-color;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// content block
+	.uplifted-entry-content {
+		background-color: $panel-bg;
+	}
+
+
+}
+
+/* Single Sermon Faux Sidebar */
+
+.single-sermon-meta-sidebar {
+
+	.uplifted-entry-title-meta {
+		background-color: $panel-bg;
+
+		h3 {
+			color: $secondary-color;
+		}
+	}
+}
+
+.uplifted-list-buttons {
+
+	li {
+		// style the buttons in media section
+		a {
+			@include button($padding:$button-med, $bg:contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 20%), 50%), $radius:true, $full-width:false, $disabled:false, $is-input:false, $is-prefix:false);
+			color: contrast-color($panel-bg, lighten($body-font-color, 60%), lighten($panel-bg, 60%), 50%)
+		}
+
+	}
+}
+
+#menu-social {
+
+	ul {
+
+		li {
+
+			a{
+
+				&:before{
+					color: contrast-color($body-bg, $body-font-color, lighten($body-bg, 60%), 50%);
+				}
+			}
+
+			a[href*="wordpress.org"]:before,
+			a[href*="wordpress.com"]:before {
+				&:hover{
+					color:	 #21759b;
+				}
+			}
+			a[href*="facebook.com"]:before {
+				&:hover{
+					color:	 #3b5998;
+				}
+			}
+			a[href*="twitter.com"]:before {
+				&:hover{
+					color:	 #33ccff;
+				}
+			}
+			a[href*="dribbble.com"]:before {
+				&:hover{
+					color:	 #ea4c89;
+				}
+			}
+			a[href*="plus.google.com"]:before {
+				&:hover{
+					color: #dd4b39;
+				}
+			}
+			a[href*="pinterest.com"]:before {
+				&:hover{
+					color:	 #c8232c;
+				}
+			}
+			a[href*="github.com"]:before {
+				&:hover{
+					color:	 #171515;
+				}
+			}
+			a[href*="tumblr.com"]:before {
+				&:hover{
+					color:	 #34526f;
+				}
+			}
+			a[href*="youtube.com"]:before {
+				&:hover{
+					color:	 #c4302b;
+				}
+			}
+			a[href*="flickr.com"]:before {
+				&:hover{
+					color:	 #ff0084;
+				}
+			}
+			a[href*="vimeo.com"]:before {
+				&:hover{
+					color:	 #1AB7EA;
+				}
+			}
+			a[href*="instagram.com"]:before {
+				&:hover{
+					color:	 #3f729b;
+				}
+			}
+			a[href*="codepen.io"]:before {
+				&:hover{
+					color:	 #000;
+				}
+			}
+			a[href*="linkedin.com"]:before {
+				&:hover{
+					color:	 #0e76a8;
+				}
+			}
+		}
+	}
+}
+
+/* Top Bar */
+
+
+// Style the top bar dropdown elements
+$topbar-dropdown-bg: #222 !default;
+$topbar-dropdown-link-color: #fff !default;
+$topbar-dropdown-link-bg: lighten($topbar-bg, 5%) !default;
+$topbar-dropdown-toggle-color: #fff !default;
+
+// Set the link colors and styles for top-level nav
+$topbar-link-color: #fff !default;
+$topbar-link-color-hover: #fff !default;
+$topbar-link-color-active: #fff !default;
+$topbar-link-bg-hover: darken($topbar-bg, 3%) !default;
+$topbar-link-bg-active: darken($topbar-bg, 3%) !default;
+
+$topbar-dropdown-label-color: #555 !default;
+
+// Top menu icon styles
+$topbar-menu-link-color: #fff !default;
+$topbar-menu-icon-color: #fff !default;
+$topbar-menu-link-color-toggled: #888 !default;
+$topbar-menu-icon-color-toggled: #888 !default;
+
+// Divider Styles
+$topbar-divider-border-bottom: solid 1px lighten($topbar-bg, 10%) !default;
+$topbar-divider-border-top: solid 1px darken($topbar-bg, 10%) !default;
+
+
+@if $include-html-top-bar-classes != false {
+
+	/* Wrapped around .top-bar to contain to grid width */
+	.contain-to-grid {
+		background: $topbar-bg;
+	}
+
+	.top-bar {
+		background: $topbar-bg;
+		box-shadow: 0 0 1px 0 rgba(0, 0, 0, .2);
+
+		.name {
+
+			h1 {
+
+				a {
+					color: $topbar-link-color;
+
+					&:hover {
+						color: $primary-color;
+					}
+				}
+			}
+		}
+
+		// Menu toggle button on small devices
+		.toggle-topbar {
+
+			a {
+				color: $topbar-link-color;
+			}
+
+			// Adding the class "menu-icon" will add the 3-line icon people love and adore.
+			&.menu-icon {
+
+			a {
+				color: $topbar-menu-link-color;
+
+				span {
+
+					// Shh, don't tell, but box-shadows create the menu icon :)
+					@if $experimental {
+						-webkit-box-shadow: 0 10px 0 1px $topbar-menu-icon-color,
+						0 16px 0 1px $topbar-menu-icon-color,
+						0 22px 0 1px $topbar-menu-icon-color;
+					}
+
+					box-shadow: 0 10px 0 1px $topbar-menu-icon-color,
+					0 16px 0 1px $topbar-menu-icon-color,
+					0 22px 0 1px $topbar-menu-icon-color;
+				}
+			}
+		}
+	}
+
+	// Change things up when the top-bar is expanded
+	&.expanded {
+
+		.title-area { background: $topbar-bg; }
+
+			.toggle-topbar {
+				a {
+					color: $topbar-menu-link-color-toggled;
+
+					span {
+						// Shh, don't tell, but box-shadows create the menu icon :)
+						@if $experimental {
+							-webkit-box-shadow: 0 10px 0 1px $topbar-menu-icon-color-toggled,
+							0 16px 0 1px $topbar-menu-icon-color-toggled,
+							0 22px 0 1px $topbar-menu-icon-color-toggled;
+						}
+
+						box-shadow: 0 10px 0 1px $topbar-menu-icon-color-toggled,
+						0 16px 0 1px $topbar-menu-icon-color-toggled,
+						0 22px 0 1px $topbar-menu-icon-color-toggled;
+					}
+				}
+			}
+		}
+	}
+
+	// Right and Left Navigation that stacked by default
+	.top-bar-section {
+
+		ul {
+			background: $topbar-dropdown-bg;
+		}
+
+		// if there is a second navigational menu, need to add
+		// a border to the ul on mobile only
+		@media screen and (max-width: $small-screen) {
+
+			// if second menu is on left
+			#menu-second.left {
+				border-bottom: $topbar-divider-border-bottom;
+				border-top: $topbar-divider-border-top;
+			}
+			// if second menu is on right
+			#menu-second.right {
+				border-top: $topbar-divider-border-bottom;
+				border-bottom: $topbar-divider-border-top;
+			}
+
+		}
+
+		.divider,
+		[role="separator"] {
+			border-bottom: $topbar-divider-border-bottom;
+			border-top: $topbar-divider-border-top;
+		}
+
+		// nav links
+		ul li {
+			& > a {
+				color: $topbar-link-color;
+				background-color: $topbar-dropdown-bg;
+
+				&:hover {
+					background-color: $primary-color;
+					color: contrast-color($primary-color, #fff, #f2f2f2, 50%);
+
+					@media screen and (min-width: $medium-screen) {
+						// change color of dropdown arrow when menu item is :active. setting it in a media-query because the stupid menu system is overly complicated and modifying the arrow color between mobile and desktop is crazy. maybe i'll look at it agian someday
+						&:after {
+							border-color: $topbar-dropdown-toggle-color-hover transparent transparent !important;
+						}
+					}
+				}
+
+				&.button {
+					background-color: $primary-color;
+
+					&.hover {
+						background-color: darken($primary-color, 10%);
+					}
+				}
+
+				&.button.secondary {
+					background-color: $secondary-color;
+
+					&.hover {
+						background-color: darken($secondary-color, 10%);
+					}
+				}
+
+				&.button.success {
+					background-color: $success-color;
+
+					&.hover {
+						background-color: darken($success-color, 10%);
+					}
+				}
+
+				&.button.alert {
+				background-color: $alert-color;
+
+					&.hover {
+						background-color: darken($alert-color, 10%);
+					}
+				}
+			}
+
+			// Apply the hover link color when it has that class
+			&.hover > a {
+				background: $topbar-link-bg-hover;
+				color: $topbar-link-color-hover;
+			}
+
+			// Apply the active link color when it has that class
+			&.active > a {
+				background: $topbar-link-bg-active;
+				color: #fff;
+
+				@media screen and (min-width: $medium-screen) {
+					// change color of dropdown arrow when menu item is :active. setting it in a media-query because the stupid menu system is overly complicated and modifying the arrow color between mobile and desktop is crazy. maybe i'll look at it agian someday
+					&:after {
+						border-color: $topbar-dropdown-toggle-color-hover transparent transparent !important;
+					}
+				}
+			}
+		}
+
+		.search-form{
+
+			button{
+				color: contrast-color($primary-color,#fff,#000,30%);
+			}
+		}
+
+		// Styling for list items that have a dropdown within them.
+		.has-dropdown {
+
+			& > a {
+				&:after {
+					@include css-triangle($topbar-dropdown-toggle-size, rgba($topbar-dropdown-toggle-color, $topbar-dropdown-toggle-alpha), $default-float);
+				}
+			}
+		}
+
+		// Styling elements inside of dropdowns
+		.dropdown {
+
+			li {
+
+				a {
+					border-bottom: $topbar-divider-border-bottom;
+
+					&.parent-link {
+						font-weight: $topbar-link-weight;
+					}
+				}
+
+				&.title h5 {
+					margin: 0;
+
+					a {
+						color: $topbar-link-color;
+
+						&:hover {
+							background-color: $primary-color;
+							color: contrast-color($primary-color, #fff, #f2f2f2, 50%);
+						}
+					}
+				}
+			}
+
+			label {
+				color: $topbar-dropdown-label-color;
+			}
+		}
+	}
+
+	//
+	// Top Bar styles intended for screen sizes above the breakpoint.
+	//
+	@media #{$topbar-media-query} {
+		.top-bar {
+			background: $topbar-bg;
+
+			&.expanded {
+				background: $topbar-bg;
+			}
+		}
+
+		.top-bar-section {
+
+			li {
+				a:not(.button) {
+					background: $topbar-bg;
+					&.hover {
+						background: adjust-color($topbar-dropdown-bg, $lightness: $topbar-link-hover-lightness);
+					}
+				}
+			}
+
+			.has-dropdown {
+				& > a {
+
+				&:after {
+					@include css-triangle($topbar-dropdown-toggle-size, rgba($topbar-dropdown-toggle-color, $topbar-dropdown-toggle-alpha), top);
+				}
+			}
+		}
+
+		.dropdown {
+
+			li {
+
+				// secondary nav links
+				a {
+					background: $topbar-dropdown-bg;
+				}
+
+				label {
+					background: lighten($topbar-bg, 5%);
+				}
+			}
+		}
+
+		.has-form {
+			background: $topbar-bg;
+		}
+	}
+
+		// Degrade gracefully when Javascript is disabled. Displays dropdown and changes
+		// background & text color on hover.
+		.no-js .top-bar-section {
+			ul li {
+				// Apply the hover link color when it has that class
+				&:hover > a {
+					background: $topbar-link-bg-hover;
+					color: $topbar-link-color-hover;
+				}
+
+				// Apply the active link color when it has that class
+				&:active > a {
+					background: $topbar-link-bg-active;
+					color: $topbar-link-color-active;
+				}
+			}
+		}
+	}
+}
+
+/* Widgets */
+
+// the entire widget should be built here,
+// including modifications for sidebar and footer.
+// a Global Widget is included that will generally
+// style most widgets, modify from there
+
+
+/*	Global Widget Styles */
+
+// this is a generic global widget with styles
+// for widget and layout placement including
+// sidebar and footer
+
+.uplifted-widget {
+	background-color: $panel-bg;
+	border-color: contrast-color($panel-bg,rgba(255,255,255,.1),rgba(0,0,0,.1));
+
+	.uplifted-widget-title {
+		color: contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 60%), 50%);
+		border-bottom-color: $panel-border-color;
+	}
+
+	ul {
+
+		li {
+
+			a {
+				color: contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 60%), 50%);
+
+				&:hover{
+					color: $primary-color;
+				}
+			}
+
+			> &:last-child a{
+				border-bottom: none;
+			}
+		}
+	}
+
+	#uplifted-home-bottom-widgets &,
+	#uplifted-sidebar-right & {
+		color: contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 60%), 50%);
+
+		cite {
+			color: contrast-color($panel-bg, lighten($body-font-color, 20%), lighten($panel-bg, 30%), 50%);
+		}
+	}
+
+	// footer specific uplifted-widget styles
+	#footer & {
+		border-color: contrast-color($body-bg, darken($body-bg, 10%), lighten($body-bg, 30%), 50%);
+
+		.uplifted-widget-title {
+			color: contrast-color($body-bg, $body-font-color, lighten($body-bg, 60%), 50%);
+			border-color: contrast-color($body-bg, darken($body-bg, 10%), lighten($body-bg, 30%), 50%);
+		}
+
+	} // end footer specific styles for uplifted-widget
+
+} // end uplifted-widget
+
+/* Category & Archive Widgets */
+
+// category and archive widgets include list
+// items like sermons, post, topics, books, etc
+
+// add styles to link and item number
+.widget_ctfw-archives,
+.widget_ctfw-categories {
+
+	// color item number
+	li {
+		color: $secondary-color;
+
+		//
+		a {
+			color: $body-font-color;
+
+			&:hover {
+				color: $primary-color;
+			}
+		}
+		#footer & {
+			color: contrast-color($body-bg, $body-font-color, lighten($body-bg, 50%), 50%);
+		}
+
+	}
+}
+
+
+/* Calendar Widget */
+
+.widget_calendar {
+
+	#calendar_wrap {
+
+		#wp-calendar {
+
+			caption {
+				background-color: darken($primary-color,10%);
+				color: contrast-color($primary-color, $body-font-color, lighten($primary-color, 60%), 50%);
+
+				#footer & {
+					background-color: transparent;
+					color: contrast-color($body-bg, $body-font-color, lighten($body-bg, 60%), 50%);
+				}
+			}
+
+			thead th {
+				background-color: $primary-color;
+				border-color: $primary-color;
+				color: contrast-color($primary-color, $body-font-color, lighten($primary-color, 60%), 50%);
+
+				#footer & {
+					background-color: contrast-color($body-bg, darken($body-bg, 10%), lighten($body-bg, 30%), 50%);
+					color: contrast-color($body-bg, $body-font-color, lighten($body-bg, 60%), 50%);
+				}
+			}
+
+			tbody tr {
+				border-bottom: 1px solid contrast-color($panel-bg, darken($panel-bg, 10%), lighten($panel-bg, 30%), 50%);
+
+				#footer & {
+					border-color: transparent;
+				}
+
+				td {
+					border-color: contrast-color($panel-bg, darken($panel-bg, 10%), lighten($panel-bg, 30%), 50%);
+					background-color: $panel-bg;
+
+					#footer &{
+						border-color: contrast-color($body-bg, darken($body-bg, 10%), lighten($body-bg, 30%), 50%);
+						background-color: transparent;
+					}
+				}
+
+			}
+
+			tfoot {
+
+				td {
+
+					a {
+						color: contrast-color($primary-color, $body-font-color, lighten($primary-color, 60%), 50%);
+
+						#footer & {
+							color: contrast-color($body-bg, $body-font-color, lighten($body-bg, 60%), 50%);
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+/* RSS Widget */
+
+.widget_rss {
+
+	// header color needs to be styled since there is
+	// an anchor link inside
+	h4 a {
+		color: #fff;
+		&:hover {
+			color: $primary-color;
+		}
+
+		// tweak color if widget is in footer
+		#footer & {
+			color: lighten($header-font-color, 20%);
+
+			&:hover {
+				color: $primary-color;
+			}
+		}
+	}
+
+	ul li {
+		margin-bottom: .5em !important;
+
+		a {
+			border-bottom: 1px solid lighten($secondary-color, 55%) !important;
+		}
+	}
+}
+
+/* Search Widget */
+
+// the Search field and button need to have specific heights to match correctly
+.search-form {
+
+	// this is the search button
+	button {
+		background-color: $primary-color;
+		color: contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 60%), 50%);
+
+		&:hover {
+			background-color: darken($primary-color,5%);
+			color: #fff;
+		}
+	}
+
+	#footer & {
+
+		button {
+			background-color: contrast-color($body-bg, darken($body-bg, 10%), lighten($body-bg, 30%), 50%);
+
+			&:hover {
+				background-color: $primary-color;
+			}
+		}
+	}
+}
+
+/* Recent Comments */
+
+.widget_recent_comments {
+
+	ul li {
+		border-bottom-color: contrast-color($neutral-color, darken($neutral-color,5%), lighten($neutral-color,5%), 50%);
+
+		a {
+			color: $secondary-color;
+		}
+	}
+}
+
+/* RSS Widget */
+
+.widget_rss cite {
+
+	#footer & {
+		color: rgba(255,255,255,.8);
+	}
+}
+
+.widget_ctfw-posts,
+.widget_ctfw-sermons,
+.widget_ctfw-locations {
+	article {
+		border-bottom-color: contrast-color($neutral-color, rgba(0,0,0,.3), rgba(255,255,255,.3));
+		color: contrast-color($body-bg, lighten($body-font-color,10%), lighten($body-bg, 50%));
+	}
+}
+
+
+/* Wordpress */
+
+
+// if a post is sticky
+
+.sticky {
+
+	// custom style of sticky post container
+	.panel {
+		border: 4px solid $panel-border-color;
+	}
+}
+
+// style author comments differently
+.bypostauthor {
+	box-shadow: inset 0 6px 0 $primary-color;
+}
+
+.wp-caption {
+	border-bottom-color: $panel-border-color;
+}
+
+.wp-caption p.wp-caption-text {
+	color: lighten($body-font-color,50%);
+}

@@ -1,0 +1,109 @@
+/*
+ *
+ * Pagination
+ *
+ */
+
+//
+// Archive Page Pagination
+//
+.pagination {
+	text-align: center;
+	overflow: auto;
+	background-color: $panel-bg;
+	margin-bottom: $panel-margin-bottom;
+	border: $panel-border;
+
+	ul {
+		margin: 0; // kill defaul ul margin
+
+		li {
+			display: inline-block;
+
+			a {
+				padding: 1em;
+				display: block;
+				color: contrast-color($panel-bg, lighten($body-font-color, 30%), #f2f2f2, 50%);
+
+				&:hover {
+					background-color: $primary-color;
+					color: $neutral-color;
+				}
+			}
+			span.current {
+				color: $secondary-color;
+				padding: 1em;
+				display: block;
+			}
+		}
+	}
+}
+
+//
+// Single Page Pagination
+//
+.uplifted-nav-left-right {
+
+	// kill container styles and add them to the buttons
+	// so things look nice if there is only one button available
+	&.pagination {
+		background-color: transparent;
+		border: none;
+	}
+
+	>div {
+		background-color: $panel-bg;
+		border: $panel-border;
+	}
+
+	// remove top border of second button only on mobile so we
+	// don't have a double thickness line in-between the buttons
+	@media screen and (max-width: $small-screen - 200px) {
+		div:nth-child(2) {
+			border-top: none;
+		}
+	}
+
+	// re-position buttons above mobile
+	@media screen and (min-width: $small-screen - 200px) {
+		> div {
+			width: 50%;
+			float: left;
+
+			// remove left border of second button only above mobile so we
+			// don't have a double thickness line in-between the buttons
+			&:nth-child(2) {
+				border-left: none;
+			}
+		}
+	}
+
+	a {
+		padding: 1em;
+		display: block;
+		color: contrast-color($panel-bg, lighten($body-font-color, 30%), #f2f2f2, 50%);
+
+		&:hover {
+			background-color: $primary-color;
+			color: $neutral-color;
+		}
+	}
+}
+
+//
+// Attachment Page Pagination
+//
+.attachment-pagination {
+	display: inline-block;
+
+	a {
+		padding: 1em;
+		display: block;
+		color: contrast-color($neutral-color, lighten($topbar-link-color, 50%), #f2f2f2, 50%);
+
+		&:hover {
+			background-color: $primary-color;
+			color: $neutral-color;
+		}
+	}
+}

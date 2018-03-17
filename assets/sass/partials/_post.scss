@@ -1,0 +1,197 @@
+/* Post */
+
+// a post is a general module that controls the design
+// and styling of many things, including blog post, people,
+// locations, events, and sermons, and more
+
+// Article - .<post-type>
+// div - .uplifted-entry-image
+// div - .uplifted-content-meta
+//   header - .uplifted-entry-header
+//   div - .uplifted-entry-content
+//   footer - .uplifted-entry-footer
+
+
+//
+// Global .hentry styles - this is for all post
+// and article types, some styles will be overwritten
+// below in speacial cases
+//
+.uplifted-content-meta {
+  margin-bottom: $panel-margin-bottom;
+  background-color: $panel-bg;
+  border: $panel-border;
+  padding: $panel-padding;
+  color: contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 70%), 50%);
+
+  .sticky & {
+    border-width: 3px;
+  }
+
+  // set the color of body copy and heading when in the main content area
+  .uplifted-content-block & h1, h2, h3, h4, h5, h6 {
+    color: contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 70%), 50%);
+  }
+}
+
+// on pages with a double loop we need to negate the container
+// padding to achieve the style we want - Sermons, People, Events, Locations
+#uplifted-loop-after-content .hentry,
+.blog #wrapper .hentry {
+  padding: 0;
+}
+// due to the double loop, ChurchTheme template pages we need to pay
+// special attention to the loop container, negate the .hentry styles
+// of the page article but keep the Post .hentry intact
+.page-template-page-templatespeople-php,
+.page-template-page-templatessermons-php,
+.page-template-page-templateslocations-php,
+.page-template-page-templatesevents-upcoming-php,
+.page-template-page-templatesevents-past-php {
+
+  #wrapper .uplifted-entry-full.hentry {
+    margin-bottom: 0;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+}
+
+// Meta Entry Widget
+//
+// global styles for each post type including
+// meta for people, sermons, etc
+//
+
+// Feature Image of a Post
+.uplifted-entry-image {
+  max-width: 100%;
+
+  img {
+    border: none;
+    padding: 0;
+    margin: 0;
+    float: none;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+// Post Content container
+.uplifted-content-meta {
+  padding: $panel-padding;
+}
+
+.uplifted-entry-meta {
+  list-style: none;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+
+  li {
+    float: left;
+    margin: 0 .5em .5em 0;
+    padding-left: 2em;
+    position: relative;
+    color: contrast-color($body-bg, lighten($body-font-color,30%), lighten($body-bg, 50%));
+    font-size: .9em;
+
+    @media screen and (min-width: $medium-screen) {
+      margin: 0 1.5em .5em 0;
+    }
+  }
+
+  a {
+    color: contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 70%), 50%);
+    color: contrast-color($body-bg, lighten($body-font-color,30%), lighten($body-bg, 50%));
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  // tweak icons in meta list
+  .genericon {
+    font-size: 1.3em;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    color: contrast-color($body-bg, lighten($body-font-color,30%), lighten($body-bg, 50%));
+  }
+}
+
+.uplifted-entry-title {
+  font-weight: 400;
+  line-height: 1.2;
+
+  @media screen and (min-width: ($small-screen - 200px) ) {
+	  font-size: $h1-font-size;
+	}
+  }
+
+// Post Footer - usually buttons
+.uplifted-entry-footer {
+
+
+  .view-details {
+    display: inline-block;
+    padding: .75em 0;
+  }
+
+  // tweak icons in footer buttons
+  .genericon {
+    font-size: 1.3em;
+    position: relative;
+    top: -1px;
+    margin-right: .3em;
+  }
+
+  .genericon-location {
+    top: auto;
+  }
+
+  .genericon-cloud-download {
+    top: -2px;
+  }
+
+  .genericon-standard {
+    font-size: 1.5em;
+  }
+}
+
+
+
+
+
+
+
+
+// author description widget
+.uplifted-author-box {
+  margin: $panel-margin-bottom 0;
+  overflow: auto;
+
+  .uplifted-author-avatar {
+    float: left;
+    margin: 0 1em 1em 0;
+    overflow: hidden;
+    border-radius: $global-rounded;
+  }
+
+  .uplifted-author-content {
+
+    h1 {
+      font-size: 1.2em;
+    }
+  }
+
+}
+
+/* Attachment Post */
+.type-attachment {
+
+  .uplifted-entry-attachment {
+    margin: 0 (-$panel-padding);
+  }
+}

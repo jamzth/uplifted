@@ -1,0 +1,11 @@
+/* Flexslider Fonts */
+
+
+@font-face {
+  font-family: 'Flexslider';
+  src: url('../fonts/flexslider-icon.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/flexslider-icon.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/flexslider-icon.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/flexslider-icon.svg#svgFontName') format('svg'); /* Legacy iOS */
+}

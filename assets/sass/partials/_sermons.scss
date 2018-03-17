@@ -1,0 +1,181 @@
+/* Sermons */
+
+
+// for the Single Sermon pages we are creating the special layout with
+// a hack. Forcing the content to be full-width whether there is a sidebar
+// or not, and then hiding the sidebar.
+.single-ctc_sermon.uplifted-no-sidebar #uplifted-content,
+.single-ctc_sermon.uplifted-has-sidebar #uplifted-content {
+  width: 100% !important;
+}
+
+// hiding the sidebar on Single Sermon to get the layout we want
+.single-ctc_sermon #uplifted-sidebar-right {
+  display: none !important;
+}
+
+
+/*
+  *
+  * Single Sermon Page
+  *
+  */
+
+// remove post content styling for Single Sermons
+.single-ctc_sermon #uplifted-content .hentry {
+  background-color: transparent;
+  border: none;
+}
+
+.single-ctc_sermon  {
+
+  .uplifted-entry-header {
+
+    // sermon title, date, and speaker
+    .uplifted-entry-title-meta {
+      text-align: center;
+      margin: .5em 0;
+
+      @media screen and (min-width: $small-screen) {
+    	  font-size: 1.2em;
+    	}
+
+      ul {
+        display: inline-block;
+        font-weight: bold;
+
+        li {
+          margin-right: 0;
+          padding: 0 .3em;
+
+          &:first-child:after {
+            content: " | ";
+            padding-left: .3em;
+          }
+
+          a {
+            color: contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 70%), 50%);
+            border: none;
+
+            &:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+//
+// in some cases the embed media may need to be bumped away from hero image.
+// SoundCloud is one example if using the large square player
+  #uplifted-sermon-full-audio-player iframe {
+    margin-top: $panel-margin-bottom;
+  }
+
+  // single sermon main content area
+  .single-sermon-content {
+    padding-left: 0;
+
+    // part of the page hack, need to kill the right padding on mobile
+    @media screen and (max-width: $small-screen) {
+  	  padding-right: 0;
+  	}
+  }
+
+  // content block
+  .uplifted-entry-content {
+    background-color: $panel-bg;
+    border: $panel-border;
+    padding: $panel-padding;
+    margin-bottom: $panel-margin-bottom;
+  }
+
+
+}
+
+/* Single Sermon Faux Sidebar */
+
+// because of the way standard pages are setup
+// and the Single Sermon deviates from that template,
+// the content layout is being drastically altered
+// through CSS to attain the desired effect
+.single-sermon-meta-sidebar {
+  padding-right: 0;
+
+  // hide the Faux Sidebar on mobile
+  @media screen and (max-width: $small-screen) {
+	  display: none;
+	}
+
+  .uplifted-entry-title-meta {
+    text-align: left;
+    margin: 0 0 $panel-margin-bottom;
+    padding: $panel-padding;
+    background-color: $panel-bg;
+    border: $panel-border;
+
+    ul {
+
+        li {
+          float: none;
+          border: none;
+        }
+      }
+    }
+
+  h3 {
+    color: $secondary-color;
+  }
+}
+
+
+/* Sermon Media Module */
+
+// the Media Module contains the Sermon video player
+// and Sermon Audio player tied to a Featured Image.
+// the two players will toggle visibility
+.uplifted-list-buttons-container {
+  margin: .5em 0 2em;
+}
+
+.uplifted-list-buttons {
+  margin: 0;
+  list-style: none;
+  display: inline;
+
+  &:last-child {
+    float: right;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: .5em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    // style the buttons in media section
+    a {
+      @include button($padding:$button-med, $bg:contrast-color($panel-bg, $body-font-color, lighten($panel-bg, 20%), 50%), $radius:true, $full-width:false, $disabled:false, $is-input:false, $is-prefix:false);
+      color: contrast-color($panel-bg, lighten($body-font-color, 60%), lighten($panel-bg, 60%), 50%)
+    }
+
+  }
+}
+
+// Since we are using a special layout method we need to size the pagination
+// element and comments section accordingly
+.single-ctc_sermon .pagination,
+.single-ctc_sermon #comments {
+  @extend .large-8;
+  @extend .column;
+  @include clearfix;
+  padding-left: 0;
+
+  // part of the page hack, need to kill the right padding on mobile
+    @media screen and (max-width: $small-screen) {
+      padding-right: 0;
+    }
+}

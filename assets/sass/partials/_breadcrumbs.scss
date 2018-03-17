@@ -1,0 +1,17 @@
+/* Breadcrumbs */
+
+.ctfw-breadcrumbs {
+	font-size: .8em;
+	margin: 1em 1em 2em;
+	color: contrast-color($body-bg, lighten($body-font-color,50%), lighten($body-bg, 50%));
+
+	a {
+		//color: lighten($body-font-color,50%);
+		color: contrast-color($body-bg, lighten($body-font-color,50%), lighten($body-bg, 50%));
+		margin: 0 .3em;
+
+		&:hover {
+			color: $primary-color;
+		}
+	}
+}
